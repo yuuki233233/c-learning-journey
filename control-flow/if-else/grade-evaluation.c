@@ -5,7 +5,11 @@ int main()
 {
 	printf("请输入您的分数(0 ~ 100)之间,并查询评估:");
 	int score = 0;
-	scanf("%d", &score);
+	if(scanf("%d", &score) != 1)
+	{
+		printf("错误:请输入有效数字!\n");
+		return 1;
+	}
 
 	if (score >= 90 && score <= 100)
 	{
