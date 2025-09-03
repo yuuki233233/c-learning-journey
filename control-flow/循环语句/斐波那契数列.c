@@ -2,16 +2,21 @@
 #include<stdio.h>
 
 int main() {
+	int n = 0;
+	printf("请输入你要输入的项: ");
+	scanf("%d", &n);
+
 	int a = 0, b = 1;
-	printf("%d %d ", a, b);
+	if (n <= 1) printf("%d\n", a);
+	if (n <= 2) printf("%d\n", b);
 
-	do {
+	int num = 2;
+	for (int i = 1; i <= n; i++) {
 		int max = a + b;
-		printf("%d ", max);
+		printf("%d\n", max);
 
-		a = b;
+	    a = b;
 		b = max;
-	} while (1);
-
+	}
 	return 0;
 }
