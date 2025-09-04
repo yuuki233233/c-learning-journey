@@ -1,33 +1,65 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
 
-int main() {
-	srand(time(0));
-	int target = rand() % 100 + 1; //目标
-	int guess, attempts = 0; //猜测
-	printf("猜数字游戏开始!(0 ~ 100)\n");
+void menu()
+{
+	printf("**********************************\n");
+	printf("***        1. play             ***\n");
+	printf("***        0. exit             ***\n");
+	printf("**********************************\n");
 
-	do {
-		if (scanf("%d", &guess) != 1) {
-			printf("请输入数字!\n");
-			while (getchar() != '\n');
-			continue;
+}
+
+void game()
+{
+	int gurss = 0;
+	int ret = rand() % 100 + 1;
+	int num = 0;
+
+	while (1)
+	{
+		num++;
+		printf("请输入要猜的数:>");
+		scanf("%d", &gurss);
+
+		if (gurss > ret)
+		{
+			printf("猜大了\n");
 		}
-
-		attempts++;
-
-		if (guess > target) {
-			printf("输入过大\n");
+		else if (gurss < ret)
+		{
+			printf("猜小了\n");
 		}
-		else if(guess < target) {
-			printf("输入过小\n");
+		else
+		{
+			printf("恭喜您第%d猜对了\n",num);
+			break;
 		}
-		else {
-			printf("第%d次猜对了!\n", attempts); break;
-		}
-	} while (1);
+	}
 
+}
+
+int main()
+{
+	int input = 0;
+	srand((unsigned int)time(NULL));
+	do
+	{
+		menu();
+		printf("请选择:>");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("选择错误,重新选择\n");
+			break;
+		}
+	} while (input);
 	return 0;
 }
