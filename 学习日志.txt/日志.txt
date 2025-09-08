@@ -72,3 +72,8 @@ while (i < size1 && j < size2) {
     else
         result[k++] = arr2[j++];
 }
+
+
+2025年9月7号 星期日
+练习题
+-函数加减乘除
