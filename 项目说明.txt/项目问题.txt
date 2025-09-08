@@ -46,3 +46,6 @@ int rat = rand() % 100+1//取种子后两位的随机值0~100
 #include<Windows.h>用于实现动态效果
 #include<stdlis.h>用于命令行清屏
 
+
+##函数
+函数被称为子程序, 通常简化用
