@@ -48,7 +48,8 @@ void SetMine(char arr[ROWS][COLS], int row, int col)
 
 int GetFind(char mine[ROWS][COLS], int x, int y)
 {
-	return mine[x - 1][y + 1] + mine[x - 1][y] + mine[x - 1][y - 1] + mine[x][y + 1] + mine[x][y - 1] + mine[x + 1][y + 1] + mine[x + 1][y] + mine[x + 1][y - 1] - 8*'0';
+	return mine[x - 1][y + 1] + mine[x - 1][y] + mine[x - 1][y - 1] + mine[x][y + 1] +
+		mine[x][y - 1] + mine[x + 1][y + 1] + mine[x + 1][y] + mine[x + 1][y - 1] - 8*'0';
 }
 
 void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
