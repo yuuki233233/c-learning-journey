@@ -3,10 +3,9 @@
 
 int main()
 {
-	int num = 10;
-
-	int* p = &num;
-
-	printf("%d\n", *p);
+	int a = 10;
+	int* p = &a;
+	*p = 20;
+	printf("%d\n", a);
 	return 0;
- }
+}
