@@ -3,6 +3,10 @@
 
 int main()
 {
+	int num = 10;
 
+	int* p = &num;
+
+	printf("%d\n", *p);
 	return 0;
-}
+ }
