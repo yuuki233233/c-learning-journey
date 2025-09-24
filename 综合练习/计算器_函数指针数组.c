@@ -1,6 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+void menu()
+{
+	printf("1. add   2. sub\n");
+	printf("3. mul   4. div\n");
+	printf("0. exit        \n");
+}
+
 int add(int x, int y)
 {
 	return x + y;
@@ -23,15 +30,31 @@ int div(int x, int y)
 
 int main()
 {
-	int(*p)(int, int) = add;
-	int(*ps[4])(int, int) = { add,sub,mul,div };
-	printf("请输入两个整数并进行加减乘除:");
-	int n = 0, m = 0;
-	scanf("%d%d", &n, &m);
-	for (int i = 0; i < 4; i++)
+	int input = 0;
+	int x = 0, y = 0, z = 0;
+	int(*parr[5])(int, int) = { 0, add,sub,mul,div };
+	do
 	{
-		int ret = ps[i](n, m);
-		printf("%d ", ret);
-	}
+		menu();
+		printf("请选择:");
+		scanf("%d", &input);
+
+		if (input >= 1 && input <= 4)
+		{
+			printf("请输入两个整数:");
+			scanf("%d%d", &x, &y);
+			z = parr[input](x, y);
+			printf("%d\n", z);
+		}
+		else if (input == 0)
+		{
+			printf("退出计算器\n");
+		}
+		else
+		{
+			printf("请重新输入\n");
+		}
+
+	} while (input);
 	return 0;
 }
