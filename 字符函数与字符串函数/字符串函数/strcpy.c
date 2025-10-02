@@ -10,12 +10,9 @@ void my_strcpy(char* arr1, char* arr2)
 	//¿½±´'\0'Ö®Ç°µÄ×Ö·û
 	while (*arr1 != '\0')
 	{
-		*arr2 = *arr1;
-		arr2++;//¿É»»³É*arr2++ = *arr1++;
-		arr1++;
+		*arr2++ = *arr1++;
 	}
-	//¿½±´'\0'×Ö·û
-	*arr2 = *arr1;
+	
 }
 
 int main()
