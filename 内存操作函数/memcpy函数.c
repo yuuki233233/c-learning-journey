@@ -8,7 +8,7 @@ int main()
 	//内存足够大
 	int arr2[20] = { 0 };
 	//拷贝内存,最右边数字表示字节
-	memcpy(arr2, arr1, 40);
+	memcpy(arr2, arr1, 10*sizeof(int));
 	//打印数组arr2
 	for (int i = 0; i < 20; i++)
 	{
